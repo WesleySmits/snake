@@ -8,8 +8,8 @@
         "serve": "webpack serve",
         "test": "jest",
         "test:watch": "jest --watch",
-        "lint": "npx eslint ./app/",
-        "lint:watch": "npx esw --ext .js,.ts ./app --watch",
+        "lint": "npx eslint ./game/",
+        "lint:watch": "npx esw --ext .js,.ts ./game --watch",
         "cypress:open": "cypress open"
     },
     "repository": {

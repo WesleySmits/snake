@@ -4,9 +4,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env) => ({
     mode: 'development',
-    context: path.join(__dirname, 'app'),
+    context: path.join(__dirname, 'game'),
     entry: {
-        app: './js/app.ts',
+        game: './js/Game.ts',
         styles: './css/main.pcss'
     },
     output: {
@@ -84,8 +84,11 @@ module.exports = (env) => ({
         }),
 
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'app/index.html'),
+            template: path.resolve(__dirname, 'game/index.html'),
             inject: 'body'
         })
-    ]
+    ],
+    resolve: {
+        extensions: ['.js', '.json', '.ts']
+    }
 });
