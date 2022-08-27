@@ -32,13 +32,9 @@ class Game implements Observer {
 
     #score = 0;
 
-    get score(): number {
-        return this.#score;
-    }
-
     set score(value: number) {
         this.#score = value;
-        this.#scoreElement.innerText = this.score.toString();
+        this.#scoreElement.innerText = this.#score.toString();
         this.snake.onScore();
     }
 
