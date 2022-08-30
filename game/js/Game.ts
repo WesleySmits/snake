@@ -2,7 +2,7 @@ import Food from './Food';
 import GameLoop from './Loop';
 import Snake from './Snake';
 import { Observer } from './types/ObserverPattern';
-import { getPropertyValue, randomCoordinate } from './utils';
+import { randomCoordinate } from './utils';
 
 export interface Coordinate {
     x: number;
@@ -16,13 +16,14 @@ export enum Direction {
     Right = 'right'
 }
 
+const documentStyles = getComputedStyle(document.documentElement);
 export const styles = {
-    gameFill: getPropertyValue('--game-background'),
-    gameStroke: getPropertyValue('--game-border'),
-    snakeFill: getPropertyValue('--snake-background'),
-    snakeStroke: getPropertyValue('--snake-border'),
-    foodFill: getPropertyValue('--food-background'),
-    foodStroke: getPropertyValue('--food-border')
+    gameFill: documentStyles.getPropertyValue('--game-background'),
+    gameStroke: documentStyles.getPropertyValue('--game-border'),
+    snakeFill: documentStyles.getPropertyValue('--snake-background'),
+    snakeStroke: documentStyles.getPropertyValue('--snake-border'),
+    foodFill: documentStyles.getPropertyValue('--food-background'),
+    foodStroke: documentStyles.getPropertyValue('--food-border')
 };
 
 class Game implements Observer {
